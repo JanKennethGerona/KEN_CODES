@@ -1,0 +1,56 @@
+h3{
+    font-family: courier;
+    color: rgb(255, 255, 255);
+    font-weight: 999;
+}
+
+ul{
+    color: green;
+}
+
+caption{
+    color: rgb(75, 1, 196);
+}
+body{
+    background-image: url(https://t3.ftcdn.net/jpg/03/10/62/12/360_F_310621281_foEqKBGtGlNWFQRePgdF5BpLOFyTsnzO.jpg);
+    background-size: cover;
+}
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 100px 710px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  
+  th {
+    background-color: rgb(75, 1, 196); 
+    color: white; 
+  }
+  
+  
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: white; 
+  }
+  
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+.container{
+        width: 80%; 
+        max-width: 320px;
+        margin: 0 auto; 
+        padding: 20px; 
+        background-color: #236ab1; 
+        border: 1px solid #236ab1; 
+        position: 400px 710px;
+        border-radius: 50px;
+        box-shadow: 1px 10px 100px rgba(0, 0, 0, 0.2);
+        background-image: img src="https://media.istockphoto.com/id/482724819/photo/feathers.jpg?s=612x612&w=0&k=20&c=uQVqLtHR8ixQxlKAcvr67sxRDnVraowX3AmBjV-wxP8=";
+}

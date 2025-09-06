@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/v278_4822.png" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Lato, sans-serif;
+      opacity: 0;
+      transform: translateY(100px);
+      animation: slideFadeIn 0.6s ease forwards;
+    }
+
+    header {
+      background-color: #BCBCBC;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header img.logo {
+      height: 50px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .donate-button {
+      background-color: #28a745;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes slideFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .AboutUs {
+      padding: 80px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #d1e9cb;
+    }
+
+    .text-section {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about-heading {
+      font-size: 50px;
+      font-weight: bold;
+      color: #000;
+      white-space: nowrap;
+      margin-bottom: 30px;
+      margin-right: 200px;
+    }
+
+    .about-description {
+      font-size: 20px;
+      color: #000;
+      line-height: 1.8;
+      max-width: 500px;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-boxes,
+    .values-section,
+    .facilities-gallery,
+    .our-story {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .info-boxes .card-container,
+    .values-section .card-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #e9f7e3;
+      flex: 1;
+      min-width: 250px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .center-icon-section {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .facilities-gallery img {
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .our-story {
+      background-color: #cde4c9;
+      padding: 50px 20px;
+    }
+
+    .our-story-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .our-story-content .text {
+      flex: 1;
+      min-width: 300px;
+      line-height: 1.8;
+    }
+
+    .our-story-content img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* New Styles for PARC Section + Slider */
+    .parc-section {
+      background: white;
+      padding: 60px 20px;
+    }
+
+    .parc-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto 30px;
+    }
+
+    .parc-image img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .parc-text {
+      max-width: 500px;
+    }
+
+    .parc-text h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .parc-text p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .slider-wrapper {
+      overflow: hidden;
+      padding: 0 20px 50px;
+      zoom: 2;
+    }
+
+    .image-slider {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+
+
+    .image-slider img {
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="images/v278_4822.png" alt="Logo" class="logo">
+    <nav>
+      <a href="#">About Us</a>
+      <a href="#">Our Animals</a>
+      <a href="#">Get Involved</a>
+      <a href="#">Support Us</a>
+      <a href="#">FAQs</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+    </nav>
+    <button class="donate-button">Donate</button>
+  </header>
+
+  <div class="AboutUs">
+    <div class="text-section">
+      <h1 class="about-heading">ABOUT US</h1>
+      <p class="about-description">
+        We are a volunteer-based animal welfare NGO. Our main work is to educate and disseminate information
+        concerning animal welfare, animal care, animal control, and other animal-related concerns.<br><br>
+        PAWS campaigns actively against animal cruelty and pet neglect, including activities like dogfights,
+        horse fights, and wild animals being used for entertainment.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="images/v278_4277.png" alt="Team Photo">
+    </div>
+  </div>
+
+  <section class="info-boxes">
+    <div class="card-container">
+      <div class="card" style="background-color: #2e7d32; color: white;">
+        <p>
+          PAWS takes a firm stand on matters relating to animal welfare, and continues to lobby for better laws to ensure humane treatment of all animals.
+        </p>
+        <button class="donate-button" style="margin-top: 20px;">Our Stand →</button>
+      </div>
+      <div class="card" style="background-color: #a5d6a7;">
+        <p>
+          PAWS has developed programs designed to promote humane treatment of all animals. Contact us to learn how to participate in these programs.
+        </p>
+        <button class="donate-button" style="margin-top: 20px;">Our Programs →</button>
+      </div>
+      <div class="card" style="background-color: #e8f5e9;">
+        <p>
+          PAWS takes a firm stand on matters relating to animal welfare, and continues to lobby for better laws to ensure humane treatment of all animals.
+        </p>
+        <button class="donate-button" style="margin-top: 20px; " onclick="window.location.href='../Our Campaigns/Campaign.html'">Our Campaign →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="card-container">
+      <div class="card">
+        <h3>Our <span style="color: #2e7d32;">Mission</span></h3>
+        <p>
+          The Philippine Animal Welfare Society exists to prevent cruelty, alleviate pain, fear and suffering in animals and to promote a society based on humane principles.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Our <span style="color: #2e7d32;">Core Values</span></h3>
+        <ul>
+          <li>Compassion and respect for animals</li>
+          <li>Commitment to the vision and mission of PAWS</li>
+          <li>Dedication to the assigned role in the organization</li>
+          <li>Respectful conduct towards each other regardless of position</li>
+          <li>Honesty and trustworthiness</li>
+          <li>Integrity</li>
+          <li>Discipline</li>
+          <li>Loyalty to the organization</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Our <span style="color: #2e7d32;">Vision</span></h3>
+        <p>
+          PAWS is a credible nationwide non-profit organization, composed of a network of committed, compassionate and trustworthy individuals and institutions that initiate and lead in the promotion of animal welfare, and the protection of all animals. PAWS envisions a nation that respects animals, practices responsible pet ownership, and protects wildlife.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW PARC SECTION START -->
+  <section class="parc-section">
+    <div class="parc-container">
+      <div class="parc-image">
+        <img src="images/aboutus/Screenshot 2025-04-10 183159.png" alt="PAWS Animal Rehabilitation Center Sign" style="zoom: 1.425;">
+      </div>
+      <div class="parc-text">
+        <h2>PAWS Animal Rehabilitation Center (PARC)</h2>
+        <p>PAWS also runs an animal shelter for over 300 cats and dogs rescued from cruelty or neglect. Here, these animals are rehabilitated in the hope of finding them new homes and a second chance at a good life.</p>
+        <p>There is also a low-cost clinic that provides veterinary services to the indigent community, including spay and neuter (kapon).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slider-wrapper">
+    <div class="image-slider" id="imageSlider">
+      <img src="images/aboutus/Screenshot 2025-04-10 183237.png" alt="Clinic reception">
+      <img src="images/aboutus/Screenshot 2025-04-10 183251.png" alt="Vet checking dog">
+      <img src="images/aboutus/Screenshot 2025-04-10 183949.png" alt="Dog operation">
+      <img src="images/aboutus/Screenshot 2025-04-10 184022.png" alt="Clinic tools">
+      <img src="images/aboutus/Screenshot 2025-04-10 184044.png" alt="Outdoor view">
+      <img src="images/aboutus/Screenshot 2025-04-10 184104.png" alt="dsadas">
+      <img src="images/aboutus/Screenshot 2025-04-10 184122.png" alt="">
+      <img src="images/aboutus/Screenshot 2025-04-10 184145.png" alt="">
+    </div>
+  </section>
+  <!-- NEW PARC SECTION END -->
+
+  <section class="our-story">
+    <div class="our-story-content">
+      <div class="text">
+        <h2>Our Story</h2>
+        <p>The Philippine Animal Welfare Society was founded in 1954 by Muriel Jay, a British educator who was then residing in the Philippines. The late Nita Hontiveros-Lichauco, one of the first volunteers, recalled that the group would make stuffed toys and other items to sell in order to raise funds. They had a clinic to treat injured animals and two bicycle patrols that picked up strays from the street.</p>
+
+        <p>When Muriel Jay went back to England, PAWS became less active and eventually slipped into dormancy. In 1986, Nita Hontiveros-Lichauco, who became President of the organization, reorganized PAWS with a handful of volunteers that later became the original board of Directors.</p>
+        
+        <p>The present batch of members started joining in 1996, full of idealism and more aggressive ideas. A cattery for rescued cats was put up at the back of the Lichauco’s residence in New Manila. Rescued dogs were sent to the Shangri-La Luna, a Lichauco farm in Pangasinan province, some 4 hours drive from Manila.</p>
+        
+        <p>Construction of the Paws Animal Rehabilitation Center (PARC) started in September 2000, with funding from International Fund for Animal Welfare (IFAW), and the kind assistance of Don Manolo Lopez of MERALCO. Informal operations started on July 2002. At present, PARC serves as a temporary refuge to dogs and cats rescued from cruelty and neglect.</p>
+        
+        <p>Today, PAWS is run by its directors Anna Cabrera, Cristina Martinez, Rich Illustre, and Doris Cruz.</p>
+        
+      </div>
+      <img src="images/Screenshot_2025-04-23_183148-removebg-preview.png" alt="Historic Image">
+    </div>
+  </section>
+
+
+  <!-- ------------------------------------------------------------------------------------------ -->
+
+  <footer>
+    <div class="footer">
+  
+      <div class="footer-icon">
+          <img src="images/v278_4822.png" alt="Icon">
+        </div>
+      <div class="footer-container">
+        
+        <div class="footer-content">
+          <div class="footer-column">
+            <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 8794 0213 17</p>
+            <br>
+            <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 1072 7000 0005</p>
+            <br>
+            <p><strong>BDO Savings</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>Account No.: 00797 0469 900</p>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="#">About Us</a>
+            <a href="#">Our Animals</a>
+            <a href="#">Get Involved</a>
+            <a href="#">FAQs</a>
+            <a href="#">Shop</a>
+            <a href="#">Contact</a>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Connect With Us</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      Copyright © 2022. All Rights Reserved for Pawt NPO.
+    </div>
+  </footer>
+
+</body>
+
+</html>

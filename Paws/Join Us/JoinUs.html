@@ -1,0 +1,672 @@
+<head>
+    <title>Join Us</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+</head>
+<style>
+    .blank {
+        margin-top: 10%;
+        display: flex;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        background-color: #BCBCBC;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header img.logo {
+        height: 50px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .donate-button {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .hero {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../Join\ Us/);
+        background-color: #e7e6e6cc;
+        /* Light gray with transparency */
+        text-align: left;
+        /* Align text to the left */
+        padding: 80px 20px 40px;
+        /* Padding for the hero section */
+        height: 500px;
+        /* Fixed height for the hero section */
+        display: flex;
+        /* Flexbox for layout */
+        flex-direction: column;
+        /* Stack items vertically */
+        padding-left: 8%;
+    }
+
+    .hero h1 {
+        font-size: 90px;
+        /* Font size for the heading */
+        font-weight: bold;
+        /* Bold font weight */
+        color: #4CAF4F;
+        /* Dark gray color for the text */
+    }
+
+    .hero-content {
+        display: flex;
+        /* Flexbox for layout */
+        flex-direction: column;
+        /* Stack items vertically */
+        justify-content: center;
+        /* Center items vertically */
+        align-items: flex-start;
+        /* Align items to the left */
+    }
+
+    .hero-content h1 {
+        margin: 0;
+        /* Remove default margin */
+        padding-bottom: 20px;
+        /* Space below the heading */
+    }
+
+    #orientation {
+        background-color: #666060;
+        /* Light gray background */
+        padding: 20px;
+        /* Padding for the orientation section */
+        border-radius: 5px;
+        /* Rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Shadow effect */
+        margin: 20px;
+        /* Margin around the section */
+        max-width: 40%;
+        margin-left: 5%;
+        margin-top: 5%;
+        height: fit-content;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #orientation h2 {
+        font-size: 45px;
+        /* Font size for the heading */
+        color: #ffffff;
+        /* Dark gray color for the text */
+        display: inline;
+    }
+
+    #orientation p {
+        color: #ffffff;
+        /* Dark gray color for the text */
+        margin-top: 10px;
+        /* Space above the paragraph */
+    }
+
+    #FAQs {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        width: 45%;
+        margin-right: 5%;
+        margin-top: 5%;
+        height: fit-content;
+        padding-top: 42px;
+    }
+
+
+    .faq-item {
+        margin-bottom: 10px;
+    }
+
+    .faq-question {
+        width: 100%;
+        background-color: #454746;
+        color: white;
+        border: none;
+        padding: 10px;
+        text-align: left;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        outline: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+        background-color: #218838;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        /* Initially hidden */
+        overflow: hidden;
+        /* Hide content that exceeds max-height */
+        padding: 0;
+        /* Remove padding when hidden */
+        background-color: #e8f5e9;
+        border-radius: 5px;
+        margin-top: 5px;
+        font-size: 14px;
+        color: #333;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        /* Smooth transition */
+    }
+
+    .faq-answer p {
+        margin: 0;
+    }
+
+    .faq-answer.open {
+        max-height: 200px;
+        /* Adjust based on the content height */
+        padding: 10px;
+        /* Add padding when visible */
+    }
+
+    .boxes {
+        background-color: transparent;
+        width: 32%;
+        height: fit-content;
+        text-wrap: break-word;
+        text-overflow: ellipsis;
+        border-radius: 5%;
+        padding: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .boxes h1{
+        color: #444444;
+    }
+
+    .boxes:hover {
+        transform: translateY(-10px); /* Slightly lift the box on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+
+    .boxes2 {
+        background-color: transparent;
+        width: 22%;
+        height: fit-content;
+        text-wrap: break-word;
+        text-overflow: ellipsis;
+        border-radius: 5%;
+        padding: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .boxes2 h1{
+        color: #444444;
+    }
+
+    .boxes2:hover {
+        transform: translateY(-10px); /* Slightly lift the box on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+
+    .boxes2 img {
+        width: 100%;
+        height: auto;
+        border-radius: 5%;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+
+
+</style>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="../Our Stand/OurStand.html">Our Stand</a>
+            <a href="Programs.html">Our Programs</a>
+            <a href="Campaigns.html">Our Campaigns</a>
+            <a href="JoinUs.html">Join Us</a>
+        </nav>
+        <button class="donate-button">Donate Now</button>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Volunteer</h1>
+            <p>When you become a volunteer, you will get assigned a variety of tasks such as dog walking, kennel
+                cleaning, and assisting during outreach programs. <br>
+                Most of our volunteers have full-time jobs and families, and they have different skills and interests.
+                You, too, can help in your own way. Read on below to <br> see how you can be part of the PAWS family.
+            </p>
+            <button class="donate-button" style="max-width: max-content; margin-top: 40px; padding: 16px 25px;">How to
+                Apply</button>
+            <button class="donate-button" style="max-width: max-content; margin-top: 40px; padding: 16px 25px;">Types of
+                Volunteer Work</button>
+        </div>
+    </div>
+
+    <div class="blank">
+        <div id="orientation">
+            <h2 style="color: #666060;">-- -- -</h2>
+            <h2>Volunteer </h2>
+            <h2 style="color: #D2EBD3;">Orientation</h2>
+            <p>We have temporarily closed the Volunteer Applications. We will open the application portal by May 1,
+                2025, for those who can attend the next PAWS VOLUNTEER ORIENTATION which is on June 7, 2025 – 10am to
+                1pm. <br><br>
+                We are calling for volunteer applicants who can render on-site direct animal care work at the PAWS
+                shelter in QC during office hours (Mondays to Saturdays, except Wednesdays, between the hours of 8am to
+                5pm). The required minimum hours is 8 hours a month for 6 months. <br><br>
+                <b style="color: rgb(225, 85, 85);">Note:</b> The 8 hours may be rendered on a staggered basis over a
+                course of several days within the month. <br><br>
+                <b style="color: rgb(225, 85, 85);">IMPORTANT:</b> Many applicants only attend the orientation but don’t
+                come back to volunteer. As a show of commitment, we are now asking all applicants for a P1000 deposit
+                which will be returned after rendering at least 8 hours of volunteer work per month for 6 consecutive
+                months. Only applications with a verified deposit will be accepted. Should an applicant fall short of
+                the volunteer requirement, their P1000 deposit will be forfeited and used for medication and treatment
+                of our special-needs shelter animals.
+            </p>
+        </div>
+
+        <div id="FAQs">
+            <div class="faq-item">
+                <button class="faq-question">What is required to become a volunteer?</button>
+                <div class="faq-answer">
+                    <p>All volunteers must first submit the application form, deposit 1000 (which will be returned after
+                        rendering at least 8 hours of volunteer work per month for 6 consecutive months) and attend the
+                        orientation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is there a strict schedule or time quota for volunteer work?</button>
+                <div class="faq-answer">
+                    <p>You can volunteer every day, once a week, once a month, or whenever your schedule allows it.
+                        However, to be considered an active, bona fide PAWS volunteer, you must render at least eight
+                        (8) hours of volunteer work every month. </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is an "active volunteer"?</button>
+                <div class="faq-answer">
+                    <p>You are considered an volunteer if you render at least eight (8) hours of volunteer work per
+                        month. Active volunteers get included in special activities, events, and workshops. Volunteers
+                        who foster shelter animals are automatically awarded their 8-hours for each month that they
+                        foster.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is there an age requirement for volunteers?</button>
+                <div class="faq-answer">
+                    <p>No. However, minors are required to attend the orientation with a parent or guardian. When
+                        volunteering, children below 13 must also be supervised by their parent or guardian.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">I can't make it to orientation. Can I still volunteer?</button>
+                <div class="faq-answer">
+                    <p>A certain level of knowledge and familiarity with our policies are required in order to perform
+                        your volunteer duties. Therefore, all volunteers are required to attend orientation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can I get a certificate for my volunteer work?</button>
+                <div class="faq-answer">
+                    <p>As a charity organization, we do not give volunteer certificates to students for academic
+                        compliance. Volunteering is generally considered an altruistic activity where one dedicates
+                        their time and resources for no financial or social gain.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can I submit my application form on the day of the orientation?</button>
+                <div class="faq-answer">
+                    <p>No. All applications must be submitted within the designated period so that we have time to
+                        screen and confirm all attendees before the scheduled orientation date.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blank" style="margin: 5%; margin-top: 10%; margin-bottom: 10%;">
+        <div class="boxes" style="background-color: #249C00;">
+            <h1>Shelter Feeding</h1>
+            <br>
+            <p>Prepare a tasty and nutritious meal with your group to feed our shelter animals.</p>
+            <br><br>
+            <button class="donate-button">Schedule Feeding</button>
+        </div>
+
+        <div class="boxes" style="margin-left: 2%; background-color: #B4DDA7;">
+            <h1>Shelter Cleaning</h1>
+            <br>
+            <p>This is a a practical, low-budget way for your group to help out at the shelter.</p>
+            <br><br>
+            <button class="donate-button">Schedule Feeding</button>
+        </div>
+
+        <div class="boxes" style="margin-left: 2%; background-color: #E2F2DD;">
+            <h1>Project CALM</h1>
+            <br>
+            <p>This is a a practical, low-budget way for your group to help out at the shelter.</p>
+            <br><br>
+            <button class="donate-button">Schedule Feeding</button>
+        </div>
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------------------------ -->
+
+<div class="AllBoxes2" style="background-color:#B4DDA7; padding-top: 5%;">
+    <div class="blank" style="margin: 5%; margin-top: 1%; justify-content: center;">
+        <div class="boxes2" >
+            <img src="images/v245_3029.png" alt="pick">
+            <h1>Direct Animal Care</h1>
+  
+            <p>Volunteers who have had their pre-exposure rabies shots can walk and bathe the dogs, groom and socialize the cats, help with cleaning cages and feeding, and other tasks that require direct contact with animals.</p>
+
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v245_3036.png" alt="pick">
+            <h1>Office/Admin Work</h1>
+
+            <p>Admin Assistants must be familiar with PAWS policies to be able to assist in answering visitors’ questions and concerns, providing counseling, processing paperwork, and giving tours to PARC to visitors.            </p>
+
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v245_3043.png" alt="pick">
+            <h1>Humane Education</h1>
+
+            <p>Volunteers can be trained to conduct seminars for schools, barangays, and private companies. Topics include Responsible Pet Ownership, Spay & Neuter, and other important Animal Welfare issues.</p>
+   
+           
+        </div>
+        
+    </div>
+    <div class="blank" style="margin: 3%; justify-content: center;">
+      
+        <div class="boxes2">
+            <img src="images/v301_1092.png" alt="pick">
+            <h1>Adoption Counseling</h1>
+            <p>The adoption team is responsible for screening and interviewing adoption applicants. They also assist in selecting the best pet for the applicant, so being acquainted with the shelter animals is a big advantage.</p>
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1094.png" alt="pick">
+            <h1>Events</h1>
+
+            <p>PAWS often conducts fundraisers and other events in different locations. Volunteers are asked to help in many ways, including setting up and manning our booths, handing out flyers and handling the animals.</p>
+          
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1096.png" alt="pick">
+            <h1>Training & Rehabilitation</h1>
+
+            <p>Volunteers interested in this area must first attend the workshop with our Dog Behavior Specialist and be committed to the program schedule. The workshop is scheduled regularly and announced to the volunteer group.            </p>
+
+           
+        </div>
+        
+    </div>
+    <div class="blank" style="margin: 3%; justify-content: center;">
+        
+        <div class="boxes2">
+            <img src="images/v301_1115.png" alt="pick">
+            <h1>Foster Care</h1>
+
+            <p>Fostering is life-saving work. By fostering, you are making your home an extension of the shelter by making room for one or several rescued animals temporarily. Fosters are considered active volunteers.</p>
+
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1117.png" alt="pick">
+            <h1>Social Media</h1>
+    
+            <p>To be part of this team, you need a deep understanding of our programs and policies. Our SocMed volunteers are responsible for posting updates on our pages, taking photos, creating graphics, or responding to comments.</p>
+ 
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1119.png" alt="pick">
+            <h1>Clinic</h1>
+      
+            <p>A volunteer may be asked to assist in some clinical or surgical procedures on animals, but they need to be vaccinated against rabies, have prior experience, or a senior volunteer who is willing to undergo training.</p>
+    
+           
+        </div>
+        
+    </div>
+    <div class="blank" style="margin: 3%; justify-content: center; margin-bottom: 0%;">
+        
+        <div class="boxes2">
+            <img src="images/v301_1138.png" alt="pick">
+            <h1>Disaster Relief</h1>
+           
+            <p>PAWS performs rescue operations in times of calamities, particularly when animals need to be removed from danger zones. Volunteers who wish to participate must receive special training in this area.</p>
+         
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1140.png" alt="pick">
+            <h1>Lobbying & Legal Work</h1>
+           
+            <p>Volunteers who are familiar with the legal system are most welcome to assist in this area. Tasks include attending hearings, meeting with government officials and providing legal assistance in court cases.</p>
+          
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1142.png" alt="pick">
+            <h1>Dr. Dog Activities</h1>
+            
+            <p>If you are the owner or handler of a certified Dr. Dog, you automatically become a volunteer. You and your dog can participate in Dr. Dog activities held in nursing homes, orphanages, and similar establishments.            </p>
+          
+           
+        </div>
+        
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer">
+  
+      <div class="footer-icon">
+          <img src="logo.png" alt="Icon">
+        </div>
+      <div class="footer-container">
+        
+        <div class="footer-content">
+          <div class="footer-column">
+            <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 8794 0213 17</p>
+            <br>
+            <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 1072 7000 0005</p>
+            <br>
+            <p><strong>BDO Savings</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>Account No.: 00797 0469 900</p>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="#">About Us</a>
+            <a href="#">Our Animals</a>
+            <a href="#">Get Involved</a>
+            <a href="#">FAQs</a>
+            <a href="#">Shop</a>
+            <a href="#">Contact</a>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Connect With Us</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      Copyright © 2022. All Rights Reserved for Pawt NPO.
+    </div>
+  </footer>
+
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach((question) => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+
+                // Toggle the 'open' class to apply the transition
+                answer.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>
+````

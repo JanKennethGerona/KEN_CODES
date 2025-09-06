@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+  </head>
+
+  <style>
+
+    body{
+        align-items: center;
+        padding-top: 18%;
+        background-image: url(https://coolbackgrounds.io/images/backgrounds/white/white-triangle-369b8d2d.jpg);
+        background-size: cover;
+    }
+
+    .login-container{
+        background: rgb(255, 255, 255);
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+            
+    }
+
+    button{
+        margin: 20px;
+        background: rgb(45, 112, 255);
+    }
+
+  </style>
+
+  <body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="text" name="username" id="username" size="12" placeholder="Username">
+        <br><br>
+        <input type="password" name="pw" id="password" size="12" placeholder="Password">
+        <br>
+        <button onclick="login()">Login</button>
+    </div>
+  </body>
+
+  <script>
+    function login() {
+            var username = document.getElementById("username").value;
+            alert("Welcome " + username)
+    }
+
+
+  </script>
+</html>

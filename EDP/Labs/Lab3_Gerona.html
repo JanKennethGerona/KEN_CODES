@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <title>Calendar</title>
+</head>
+
+<style>
+    body {
+        background-image: url(https://images.preview.ph/preview/resize/images/2024/11/21/1-kim-chiu-tanduay-girl-main-1732162614.webp);
+        background-size: cover;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .table {
+        max-width: fit-content;
+        padding: 1%;
+        width: fit-content;
+        max-height: fit-content;
+        margin: 0 auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        background-color: #fdf9f9;
+        border-radius: 50px;
+        box-shadow: 1px 10px 100px rgba(0, 0, 0, 1);
+        display: block;
+        opacity: 80%;
+    }
+
+    .mand {
+        font-size: 50;
+        max-width: fit-content;
+        padding: 1%;
+        width: fit-content;
+        max-height: fit-content;
+        margin: 0 auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        background-color: #fdf9f9;
+        border-radius: 50px;
+        box-shadow: 1px 10px 100px rgba(0, 0, 0, 1);
+        display: block;
+        opacity: 80%;
+    }
+
+    .table td:hover {
+        transform: scale(1.1);
+        background-color: #ff4242;
+        color: black;
+    }
+
+    table td:nth-child(1), table th:nth-child(1) {
+    color: #ff4242;
+    }
+
+
+    .table th {
+        padding: 30px;
+        font-size: 40;
+    }
+
+    .table tr {
+        align-content: center;
+    }
+
+    .table td {
+        font-size: 40;
+        text-align: center;
+        background-color: rgb(241, 241, 239);
+        border-radius: 15px;
+        height: 5px;
+        width: fit-content;
+        transition: 1s;
+    }
+</style>
+
+<body>
+    <div id="mand" class="mand"></div>
+</body>
+
+<script>
+    function getMonth(month) {
+        switch (month) {
+            case 1: return "January";
+            case 2: return "February";
+            case 3: return "March";
+            case 4: return "April";
+            case 5: return "May";
+            case 6: return "June";
+            case 7: return "July";
+            case 8: return "August";
+            case 9: return "September";
+            case 10: return "October";
+            case 11: return "November";
+            case 12: return "December";
+            default: return "Invalid";
+        }
+    }
+
+    function getDays(month) {
+        switch (month) {
+            case 1: return "31";
+            case 2: return "28";
+            case 3: return "31";
+            case 4: return "30";
+            case 5: return "31";
+            case 6: return "30";
+            case 7: return "31";
+            case 8: return "31";
+            case 9: return "30";
+            case 10: return "31";
+            case 11: return "30";
+            case 12: return "31";
+            default: return "0";
+        }
+    }
+
+    function Createtable(rows, cols, monthDays, daystart) {
+        let day = 1;
+        let excess = 0;
+        let filler = 0;
+        document.write('<div class="table">');
+        document.write('<table>'); document.write('<tr>');
+        document.write('<th>Sun</th>'); document.write('<th>Mon</th>'); document.write('<th>Tue</th>'); document.write('<th>Wed</th>');
+        document.write('<th>Thu</th>'); document.write('<th>Fri</th>'); document.write('<th>Sat</th>');
+        for (i = 0; i < rows; i++) {
+            document.write('<tr>');
+
+            for (j = 0; j < 7; j++) {
+                if (i == 0 && j == 0) {
+                    for (let index = 1; index < daystart; index++) {
+                        document.write('<td>' + '</td>');
+                        j++;
+                        filler++;
+                    }
+                }
+                document.write('<td>' + day + '</td>');
+                day++;
+
+                if (day > monthDays && day % 7 != 0) {
+                    excess = 7 - (day % 7) - filler;
+                    for (i = 0; i <= excess; i++) {
+                        document.write('<td>' + '</td>');
+                    }
+                }
+                if (day > monthDays) {
+                    break;
+                }
+            }
+
+            document.write('</tr>');
+            if (day > monthDays) {
+                break;
+            }
+        }
+        document.write('</table>');
+        document.write('</div>');
+    }
+
+    let month = parseInt(prompt("Month (1-12): "));
+    if (month > 12 || month < 1) {
+        alert("Invalid Month!");
+        month = parseInt(prompt("Please Enter a Month only from 1 to 12: "));
+    }
+    let day = parseInt(prompt("Day of the week (1-7): "));
+    if (day > 7 || day < 1) {
+        alert("Invalid Day!");
+        day = parseInt(prompt("Please Enter a Day only from 1 to 7: "));
+    }
+    let year = parseInt(prompt("Year: "));
+    yearString = year.toString;
+    monthName = getMonth(month);
+    monthDays = parseInt(getDays(month));
+
+    if (month === 2 && year % 4 === 0) {
+        monthDays++
+    }
+
+    Createtable(6, 7, monthDays, day);
+
+    document.getElementById("mand").innerHTML = "<h2>" + monthName + " " + year + "</h2>";
+</script>
+
+</html>

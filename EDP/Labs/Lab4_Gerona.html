@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            align-items: center;
+            background-image: url(https://images3.alphacoders.com/104/1044851.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: rgb(255, 255, 255);
+            font-family: "Oswald", sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            min-height: 90%;
+            margin: auto;
+            margin-top: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            background-color: rgba(254, 123, 123, 0.381);
+            zoom: 1.3;
+            overflow-wrap: anywhere;
+        }
+
+        .studentTable {
+            justify-items: center;
+        }
+
+        .header {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            background-color: rgba(141, 15, 15, 0.70);
+            zoom: 1.3;
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-family: "Oswald", sans-serif;
+        }
+
+        .container .header button {
+            height: fit-content;
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+            background-color: rgba(141, 15, 15, 0.70);
+            border: none;
+            border-radius: 4px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+            font-family: "Oswald", sans-serif;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .container table {
+            width: 100%;
+            border-collapse: collapse;
+            empty-cells: show;
+        }
+        
+        td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            background-color: rgba(255, 157, 157, 0.779);
+        }
+
+        .container th {
+            text-align: center;
+            vertical-align: middle;
+            padding: 12px;
+            border: collapse;
+            background-color: rgba(141, 15, 15, 0.70);
+            color: rgb(255, 255, 255);
+            font-family: "Oswald", sans-serif;
+        }
+
+        .modal {
+            opacity: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: all 0.3s ease-in-out;
+            z-index: 999;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            background-color: rgb(255, 255, 255);
+            width: 60%;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 15% auto;
+            zoom: 1.2;
+        }
+
+        .close {
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 7px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+            box-sizing: border-box;
+        }
+
+        select {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+            box-sizing: border-box;
+        }
+
+        .container .header button:hover {
+            zoom: 1.1;
+        }
+
+        #clearAll {
+            color: rgb(255, 255, 255);
+            background-color: rgba(141, 15, 15, 0.70);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Student List</h2>
+            <button id="clearAll" onclick="clearStudents()">Clear</button>
+            <button id="new" onclick="newStudent()">New</button>
+        </div>
+        <hr>
+
+        <div class="studentTable">
+            <table id="studentTable">
+                <tr>
+                    <th>ID</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Course</th>
+                    <th>Average</th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+    <div class="modal" id="modal">
+        <div class="content">
+            <span class="close">&times;</span>
+            <h3>New Student</h3>
+            <hr>
+            <label>ID</label>
+            <input type="text" id="studentID"><br>
+            <label>Last Name</label>
+            <input type="text" id="lastName"><br>
+            <label>First Name</label>
+            <input type="text" id="firstName"><br>
+            <label>Course</label>
+            <select id="course">
+                <option value="" disabled selected>Select your option</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Information System">Information System</option>
+            </select><br>
+            <hr>
+            <label>Subject 1</label>
+            <input type="text" id="sub1">
+            <label>Grade</label>
+            <input type="text" id="grd1"><br>
+            <label>Subject 2</label>
+            <input type="text" id="sub2">
+            <label>Grade</label>
+            <input type="text" id="grd2"><br>
+            <label>Subject 3</label>
+            <input type="text" id="sub3">
+            <label>Grade</label>
+            <input type="text" id="grd3"><br>
+            <label>Subject 4</label>
+            <input type="text" id="sub4">
+            <label>Grade</label>
+            <input type="text" id="grd4"><br>
+            <label>Subject 5</label>
+            <input type="text" id="sub5">
+            <label>Grade</label>
+            <input type="text" id="grd5"><br>
+            <button onclick="addStudent()">Save</button>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div id="previewModal" class="modal">
+        <div class="content">
+            <span class="close" onclick="closePreviewmodal()">&times;</span>
+            <h2 id="modalTitle">Student Details</h2>
+            <hr>
+            <p id="studentName"></p>
+            <p id="studentIDmodal"></p>
+            <p id="studentCourse"></p>
+            <hr>
+            <p id="1sub"></p>
+            <p id="2sub"></p>
+            <p id="3sub"></p>
+            <p id="4sub"></p>
+            <p id="5sub"></p>
+            <p id="averagedisplay"></p>
+            <button onclick="closePreviewmodal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        let students = JSON.parse(localStorage.getItem("students")) || [];
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        function newStudent() {
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function closePreviewmodal() {
+            previewModal.style.display = "none";
+        }
+
+        function clearForms() {
+            document.getElementById("studentID").value = "";
+            document.getElementById("lastName").value = "";
+            document.getElementById("firstName").value = "";
+            document.getElementById("course").selectedIndex = 0;
+            document.getElementById("sub1").value = "";
+            document.getElementById("sub2").value = "";
+            document.getElementById("sub3").value = "";
+            document.getElementById("sub4").value = "";
+            document.getElementById("sub5").value = "";
+            document.getElementById("grd1").value = "";
+            document.getElementById("grd2").value = "";
+            document.getElementById("grd3").value = "";
+            document.getElementById("grd4").value = "";
+            document.getElementById("grd5").value = "";
+        }
+
+        function clearStudents() {
+            if (confirm("Are you sure you want to delete all students?")) {
+                localStorage.removeItem("students");
+                students = [];
+                loadTable();
+            }
+        }
+
+        function addStudent() {
+            let noSubs = 0;
+            let grd1 = document.getElementById("grd1").value;
+            let grd2 = document.getElementById("grd2").value;
+            let grd3 = document.getElementById("grd3").value;
+            let grd4 = document.getElementById("grd4").value;
+            let grd5 = document.getElementById("grd5").value;
+
+            if (document.getElementById("sub1").value != "") {
+                noSubs++;
+            } else if (document.getElementById("sub1").value == "") {
+                grd1 = 0;
+            }
+            if (document.getElementById("sub2").value != "") {
+                noSubs++;
+            } else if (document.getElementById("sub2").value == "") {
+                grd2 = 0;
+            }
+            if (document.getElementById("sub3").value != "") {
+                noSubs++;
+            } else if (document.getElementById("sub3").value == "") {
+                grd3 = 0;
+            }
+            if (document.getElementById("sub4").value != "") {
+                noSubs++;
+            } else if (document.getElementById("sub4").value == "") {
+                grd4 = 0;
+            }
+            if (document.getElementById("sub5").value != "") {
+                noSubs++;
+            } else if (document.getElementById("sub5").value == "") {
+                grd5 = 0;
+            }
+
+
+
+            if (document.getElementById("studentID").value == "" || document.getElementById("lastName").value == "" || document.getElementById("firstName").value == "" ||
+                document.getElementById("course").value == "") {
+                alert("Please fill out all Student Details fields");
+            } else if (noSubs == 0) {
+                alert("Please fill out at least one Subject");
+            } else {
+
+
+
+                let id = document.getElementById("studentID").value;
+                let lastName = document.getElementById("lastName").value;
+                let firstName = document.getElementById("firstName").value;
+                let course = document.getElementById("course").value;
+                let sub1 = document.getElementById("sub1").value;
+                let sub2 = document.getElementById("sub2").value;
+                let sub3 = document.getElementById("sub3").value;
+                let sub4 = document.getElementById("sub4").value;
+                let sub5 = document.getElementById("sub5").value;
+
+
+                let total =
+                    (parseFloat(grd1) || 0) +
+                    (parseFloat(grd2) || 0) +
+                    (parseFloat(grd3) || 0) +
+                    (parseFloat(grd4) || 0) +
+                    (parseFloat(grd5) || 0);
+
+                let average = (Math.round((total / noSubs)*100))/100 ;
+
+                if (grd1 == 0) {
+                    grd1 = "";
+                }
+                if (grd2 == 0) {
+                    grd2 = "";
+                }
+                if (grd3 == 0) {
+                    grd3 = "";
+                }
+                if (grd4 == 0) {
+                    grd4 = "";
+                }
+                if (grd5 == 0) {
+                    grd5 = "";
+                }
+
+
+                let student = {
+                    id, lastName, firstName, course, sub1, sub2, sub3, sub4, sub5,
+                    grd1, grd2, grd3, grd4, grd5, average
+                };
+                students.push(student);
+                localStorage.setItem("students", JSON.stringify(students));
+
+                loadTable();
+                clearForms();
+                closeModal();
+            }
+        }
+
+        function loadTable() {
+            let table = document.getElementById("studentTable");
+            table.innerHTML = `
+                <tr>
+                    <th>ID</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Course</th>
+                    <th>Average</th>
+                </tr>
+            `;
+
+
+            students.forEach((student, index) => {
+                let row = table.insertRow();
+                row.innerHTML = `
+                    <td><a href="#" onclick="viewStudent(${index})">${student.id}</a></td>
+                    <td>${student.lastName}</td>
+                    <td>${student.firstName}</td>
+                    <td>${student.course}</td>
+                    <td>${student.average}</td>
+                `;
+            });
+        }
+
+        function viewStudent(index) {
+            let clickedStudent = students[index];
+
+
+            let firstOccurrence = students.find(student => student.id === clickedStudent.id);
+
+            document.getElementById("studentName").innerHTML = `<strong>${firstOccurrence.firstName} ${firstOccurrence.lastName}</strong>`;
+            document.getElementById("studentIDmodal").innerText = "" + firstOccurrence.id;
+            document.getElementById("studentCourse").innerText = firstOccurrence.course;
+            document.getElementById("1sub").innerText = firstOccurrence.sub1 + " " + firstOccurrence.grd1;
+            document.getElementById("2sub").innerText = firstOccurrence.sub2 + " " + firstOccurrence.grd2;
+            document.getElementById("3sub").innerText = firstOccurrence.sub3 + " " + firstOccurrence.grd3;
+            document.getElementById("4sub").innerText = firstOccurrence.sub4 + " " + firstOccurrence.grd4;
+            document.getElementById("5sub").innerText = firstOccurrence.sub5 + " " + firstOccurrence.grd5;
+            document.getElementById("averagedisplay").innerHTML = `<strong>Average: ${firstOccurrence.average}</strong>`;
+
+            previewModal.style.display = "block";
+        }
+
+        loadTable();
+    </script>
+</body>
+
+</html>

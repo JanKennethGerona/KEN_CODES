@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        header {
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .blank {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            width: 100%;
+        }   
+
+        .empty {
+            margin-top: 15%;
+            display: flex;
+        }
+
+        header img.logo {
+            height: 50px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            background-color: transparent;
+        }
+
+        .donate-button {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 24px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ============================================================================================= */
+
+        #top {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
+
+        .gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 85%;
+            background: linear-gradient(to right, rgba(45, 255, 45, 0.242), rgba(255, 255, 255, 0));
+            z-index: -1;
+        }
+
+        .hero {
+            margin-top: 3%;
+            padding: 40px 20px;
+            text-align: center;
+            color: #f2fff2;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            display: inline;
+        }
+
+        #Kalong {
+            padding: 1%;
+            background-color: #33333371;
+            width: 40%;
+            margin-left: 5%;
+        }
+
+        #Kalong img {
+            width: 100%;
+            height: auto;
+        }
+
+    .boxes2 {
+        background-color: transparent;
+        width: 30%;
+        height: fit-content;
+        text-wrap: break-word;
+        text-overflow: ellipsis;
+        border-radius: 5%;
+        padding: 10px;
+        padding-bottom: 40px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .boxes2 h1{
+        color: #444444;
+    }
+
+    .boxes2:hover {
+        transform: translateY(-10px); /* Slightly lift the box on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+
+    .boxes2 img {
+        width: 100%;
+        height: auto;
+        border-radius: 5%;
+        margin-bottom: 10px;
+    }
+
+    .boxes3 {
+        margin:0%;
+        background-color: transparent;
+        width: 25%;
+        height: fit-content;
+        text-wrap: break-word;
+        text-overflow: ellipsis;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .boxes3 h1{
+        color: #444444;
+    }
+
+    .boxes3:hover {
+        transform: translateY(-10px); /* Slightly lift the box on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+
+        /* ============================================================================================== */
+
+        .footer {
+            background: white;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-content {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: space-between;
+            background: #f2fff2;
+            padding: 20px;
+            border-radius: 8px;
+            align-items: start;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            background: #009900;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        .footer-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        .footer-icon img {
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .footer-container {
+            display: flex;
+            align-items: start;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-title {
+            margin-bottom: 15px;
+        }
+
+        .footer-text,
+        .footer-link {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .footer-bar {
+            background: #009900;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        .social-icon img {
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .footer-wrapper {
+            display: flex;
+            align-items: start;
+        }
+
+        .custom-list {
+            list-style: none; /* Remove default bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        .custom-list li {
+            display: flex;
+            align-items: flex-start; /* Align image and text */
+            margin-bottom: 20px; /* Add spacing between items */
+        }
+
+        .custom-list img {
+            width: 40px; /* Set image size */
+            height: 40px;
+            margin-right: 15px; /* Add spacing between image and text */
+            border-radius: 50%; /* Optional: Make the image circular */
+        }
+
+        .custom-list div {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .custom-list b {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .youtube-container {
+            display: flex;
+            justify-content: center; /* Center the video horizontally */
+            align-items: center; /* Center the video vertically if needed */
+            margin: 40px 0; /* Add spacing above and below the video */
+        }
+
+        .youtube-container iframe {
+            width: 80%; /* Set the width of the video */
+            max-width: 800px; /* Limit the maximum width */
+            height: 450px; /* Set the height of the video */
+            border-radius: 10px; /* Optional: Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow effect */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+            <a href="#">About Us</a>
+            <a href="#">Our Animals</a>
+            <a href="#">Get Involved</a>
+            <a href="#">Support Us</a>
+            <a href="#">FAQs</a>
+            <a href="#">Shop</a>
+            <a href="#">Contact</a>
+        </nav>
+        <button class="donate-button">Donate</button>
+    </header>
+
+    <img src="images/v208_318.png" alt="top" id="top">
+    <div class="gradient"></div>
+
+    <div class="hero">
+        <h3>Dedicated to the Protection and the Promotion of Humane Treatment of all Animals.</h6><br>
+            <h1>People </h1><h1 style="color: #009900;">helping </h1> <h1>animals.</h1> 
+            <br><h1>Animals</h1> <h1 style="color: #009900;">helping</h1> <h1>people.</h1>
+        <h3 style="font-weight: 100; margin-top: 4%;">PAWS takes a firm stand on matters relating to animal welfare, and continues <br>to lobby for better laws to ensure humane treatment of all animals.</h4>
+        <button class="donate-button">Donate Now</button>
+    </div> 
+
+    <div class="empty">
+        <div id="Kalong" style="margin-right: 15%;">
+            <img src="images/Screenshot 2025-05-01 092149.png" alt="Kalong">
+        </div>
+        <div id="KalongWrite" style="padding-right: 5%;">
+            <h3>About Us</h3>
+            <h1>People helping animals. <br>Animals helping people.</h1>
+            <h3 style="font-weight: 100;">PAWS is a registered non-profit organization 
+                which is dedicated to the protection and the promotion of humane treatment of all animals.</h3>
+                <button class="donate-button">Read More</button>
+            </div>
+    </div>
+
+    <div class="empty">
+        <div id="HandoutWrite" style="padding-left: 8%;">
+            <h1>Volunteer your time and skills in the following areas:</h1>
+            <h3 style="font-weight: 100;">Direct Animal Care, Office/Admin Work, Humane Education, Adoption Counseling, Events, Dog Training & Rehabilitation, Foster Care, Social Media, Clinic Assistant, Disaster Relief, Lobbying & Legal Work, Dr. Dog</h3>
+               
+            <ul class="custom-list">
+                <li>
+                    <img src="images/feeding-icon.png" alt="Feeding Icon">
+                    <div>
+                        <b>Shelter Feeding</b> <br>
+                        Prepare a tasty and nutritious meal with your group to feed our shelter animals.
+                    </div>
+                </li>
+                <li>
+                    <img src="images/cleaning-icon.png" alt="Cleaning Icon">
+                    <div>
+                        <b>Shelter Cleaning</b> <br>
+                        This is a practical, low-budget way for your group to help out at the shelter.
+                    </div>
+                </li>
+            </ul>
+            <button class="donate-button">Get Invloved</button>
+            <h3 style="font-weight: 100;">When you become a volunteer, you will get assigned a variety of tasks such as dog walking, kennel cleaning, and assisting during outreach programs. </h3>    
+            
+            <div></div>
+            </div>
+
+        <div id="Kalong" style="width: 50%; margin-right: 3%;">
+            <img src="images/Screenshot_2025-05-01_092222-removebg-preview.png" alt="Handout">
+        </div>
+    </div>
+    
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="AllBoxes2" style="background-color:#B4DDA7;margin-top: 10%; width: 100%; padding-top: 5%;">
+        <div class="blank" style="justify-content: center; text-align: center;">
+            <div class="boxes2">
+                <img src="images/v237_30.png" alt="pick">
+                <h1>Meet the Dogs</h1>
+      
+            
+    
+                
+            </div>
+    
+            <div class="boxes2" >
+                <img src="images/v237_10.png" alt="pick">
+                <h1>Meet the Cats</h1>
+    
+                
+            </div>
+    
+            <div class="boxes2" >
+                <img src="images/v237_26.png" alt="pick">
+                <h1>Volunteer</h1>
+       
+               
+            </div>
+            
+        </div>
+        <div class="blank" style="justify-content: center; text-align: center;">
+          
+            <div class="boxes2">
+                <img src="images/Screenshot 2025-05-01 092257.png" alt="pick">
+                <h1>Neglect</h1>
+               
+            </div>
+    
+            <div class="boxes2">
+                <img src="images/v237_24.png" alt="pick">
+                <h1>File a Case</h1>
+    
+               
+            </div>
+    
+            <div class="boxes2">
+                <img src="images/v237_28.png" alt="pick">
+                <h1>Spay</h1>
+    
+               
+               
+            </div>
+            
+        </div>
+        
+    
+    </div>
+
+
+    <div class="empty">
+        <div id="HandoutWrite" style="padding-left: 5%;">
+            <h1>Choose how you want to support PAWS</h1>
+            <h3 style="font-weight: 100;">Whether you’re a private individual or part of a larger organization, you <br>
+                can help us generate income through one of the options below. We are always trying to raise <br>
+                funds to cover our operational costs and fund our lobbying and educational efforts. If none <br>
+                of these options appeal to you, you can still make a one-time donation to our organization.</h3>
+            </div>
+
+        <div id="Kalong">
+            <img src="images/v237_384.png" alt="Handout">
+        </div>
+    </div>
+
+    <div class="AllBoxes2" style="background-color:#EBFFE6; width: 100%; margin-top: 10%;">
+        <div class="blank" style=" margin-top: 1%; justify-content: center; padding-top: 5%; padding-bottom: 5%;">
+            <div class="boxes3" style="background-color: #d4d4d4; text-align: center; padding-top: 5%; padding-bottom: 5%;">
+                <h1>Direct Animal Care</h1>
+            </div>
+    
+            <div class="boxes3" style="background-color: #249C00;text-align: center;padding-top: 5%; padding-bottom: 5%;">
+                <h1>Office/Admin Work</h1>
+            </div>
+    
+            <div class="boxes3" style="background-color: #b4dda7; text-align: center;padding-top: 5%; padding-bottom: 5%;">
+                <h1>Humane Education</h1>
+            </div>
+
+            <div class="boxes3" style="background-color: #C5FFB6; text-align: center;padding-top: 5%; padding-bottom: 5%;">
+                <h1>Humane Education</h1>
+            </div>
+            
+        </div>
+     
+    </div>
+
+    <div class="youtube-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LR5s0KPSbe8?si=Gkgn1bEC1-WLlsd-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <footer>
+    <div class="footer">
+  
+      <div class="footer-icon">
+          <img src="logo.png" alt="Icon">
+        </div>
+      <div class="footer-container">
+        
+        <div class="footer-content">
+          <div class="footer-column">
+            <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 8794 0213 17</p>
+            <br>
+            <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 1072 7000 0005</p>
+            <br>
+            <p><strong>BDO Savings</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>Account No.: 00797 0469 900</p>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="#">About Us</a>
+            <a href="#">Our Animals</a>
+            <a href="#">Get Involved</a>
+            <a href="#">FAQs</a>
+            <a href="#">Shop</a>
+            <a href="#">Contact</a>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Connect With Us</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      Copyright © 2022. All Rights Reserved for Pawt NPO.
+    </div>
+  </footer>
+
+</body>
+
+</html>

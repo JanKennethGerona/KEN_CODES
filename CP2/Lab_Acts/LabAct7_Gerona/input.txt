@@ -1,0 +1,6 @@
+aNDi_bRAnd
+mAth 85 80 83
+ScIEnCE	100 75 80
+ProGRAMming 92 95 91
+riZAl 75 72 73
+DATABASE 92 88 89	

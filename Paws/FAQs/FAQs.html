@@ -1,0 +1,379 @@
+<head>
+    <title>FAQs</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+</head>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        background-color: #BCBCBC;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header img.logo {
+        height: 50px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .donate-button {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 0; /* Ensure no extra space between donate button and search bar */
+    }
+
+    .hero {
+        background: url('sky.png') no-repeat center center; /* Set the image as the background */
+        background-size: cover; /* Ensure the image covers the entire section */
+        display: flex; /* Enable flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center;
+        padding: 0; /* Remove extra padding */
+        color: white; /* Adjust text color for better contrast */
+        height: 700px; /* Set the height of the hero section */
+        opacity: 0.9; /* Set the opacity of the hero section */
+    }
+
+    .hero h1 {
+        font-size: 2.8em;
+        font-weight: bold;
+        color: inherit; /* Use the inherited color (white) */
+        margin: 0; /* Remove default margin */
+    }
+
+    .program-section {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+        gap: 20px; /* Add spacing between columns */
+        padding: 40px;
+        background: #F6FFF3;
+    }
+
+    .faq-item {
+        flex: 1 1 calc(50% - 20px); /* Make each item take 50% width minus the gap */
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .faq-item:hover {
+        transform: translateY(-5px); /* Slightly lift the item on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+        background: #85cb85; /* Change background color on hover */
+    }
+
+    .faq-item h2 {
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .faq-item p {
+        font-size: 1em;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+        margin-right: -350px; /* Remove extra space between search bar and donate button */
+    }
+
+    .search-bar input[type="text"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 200px;
+    }
+
+    .search-bar button {
+        padding: 8px 12px;
+        margin-left: 5px; /* Keep small spacing between input and button */
+        background-color: #989898;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .search-bar button:hover {
+        background-color: #218838;
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+
+
+</style>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo" />
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Aboutus.html">About Us</a>
+            <a href="Programs.html">Our Programs</a>
+            <a href="FAQs.html">FAQs</a>
+            <a href="Contactus.html">Contact Us</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button>Search</button>
+        </div>
+        <button class="donate-button">Donate Now</button>
+    </header>
+
+    <div class="hero">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+
+    <div class="program-section">
+        <div class="faq-item">
+            <h2>How can I adopt from PAWS?</h2>
+            <p>Applicants go through a screening process to ensure that our rescued animals go to loving homes. The process includes an online interview via Zoom and at least two (2) separate shelter visits to meet and get to know your chosen pet. <a href="#">Apply here</a>.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Can you adopt my pet?</h2>
+            <p>PAWS does NOT adopt owned pets. We already have 300+ shelter animals rescued from cruelty and neglect that are waiting to be adopted. If you need to give up your pet for some reason, please consider other options or apply for <a href="#">rehoming assistance</a>.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Why is there an adoption fee?</h2>
+            <p>The adoption fee is a token of your commitment and a demonstration of your financial capacity to care for a pet. P500 for cats / P1000 for dogs is a small price which already covers your pet’s spay/neuter surgery, vaccinations, and tick+flea treatment.</p>
+        </div>
+        <div class="faq-item">
+            <h2>I live in the province/abroad. Can I still adopt?</h2>
+            <p>Yes, but special arrangements need to be made for the meet-and-greet, depending on your location. Please contact us to discuss your options. You may also opt to adopt from your local pound instead.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Can my adoption application get denied?</h2>
+            <p>Yes. Some reasons for denied applications include: Not being able to keep their pet indoors, incompatibility with the household, plus other circumstances that may be damaging to the health, safety, and happiness of our shelter animals.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Can I return my adopted pet if I change my mind?</h2>
+            <p>A pet is a <strong>lifetime</strong> commitment. However, if you truly can’t keep your adopted pet, please don’t abandon them on the streets or with strangers. Please return them to us so we can find another home for them.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Do you have purebred cats or dogs?</h2>
+            <p>It is very rare that purebred cats or dogs are admitted to the shelter. Sadly, they are valued more than aspins and puspins who are equally deserving of a home. Please consider adopting a local breed instead.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Do you have puppies or kittens for adoption?</h2>
+            <p>Puppies and kittens are only available for <strong>fostering</strong> for up to 6 months, or until they are vaccinated and neutered. Fostered puppies and kittens may be permanently adopted after this period if the fosterer passes the adoption application.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Animal Control vs. Animal Welfare - what's the difference?</h2>
+            <p><strong>Animal control</strong> deals with the stray animal population, complaints regarding pet waste and sanitation, and animals becoming a nuisance to the community or posing a risk to public health. <strong>Animal welfare</strong> refers to the well-being of animals. It aims to promote responsible pet ownership and put an end to animal cruelty.</p>
+        </div>
+        <div class="faq-item">
+            <h2>What is the city pound?</h2>
+            <p>The City Pound operates under the LGU. It is their responsibility to keep the stray dog population under control in accordance with the Anti-Rabies Act. Dogs caught by the city pound are kept for a number of days in case they have owners who wish to claim them. If they are not claimed within the holding period, they are euthanized or put to death.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Do you pick up stray animals?</h2>
+            <p>It’s impossible to rescue all stray animals, so we give priority to victims of cruelty and neglect or those whose life is in imminent danger. For concerns related to animal control, please contact your LGU or <a href="#">city pound</a>.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Is it legal to trap and move stray animals to a different location?</h2>
+            <p>Only the LGU or the City Veterinarian is authorized to trap or catch stray animals when they receive reports of such animals becoming a nuisance to the community or posing a risk to public health. Captured animals must be brought to the pound. Dumping them elsewhere (“niligaw”) is illegal.</p>
+        </div>
+        <div class="faq-item">
+            <h2>How do I report animal cruelty?</h2>
+            <p>Animal cruelty MUST be reported to your barangay officials and/or police hotline 911 <strong>immediately</strong>. You may also seek free legal assistance from PAWS. As the witness and reporting citizen, you will need to execute an affidavit so that PAWS can file the case and appear in court.</p>
+        </div>
+        <div class="faq-item">
+            <h2>My neighbor is neglecting their pet. Can you help?</h2>
+            <p>Please talk to your neighbor first and attempt to educate them in a friendly manner. PAWS cannot intervene or confiscate an owned pet without legal grounds. If you wish to file a case, please <a href="#">follow due process</a> so that PAWS can assist.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Is dog "katay" legal?</h2>
+            <p>NO. If you see dog slaughter in progress, you must stop it <strong>IMMEDIATELY</strong> and report it to the barangay. In many cases, it is enough to save the animal’s life.</p>
+        </div>
+        <div class="faq-item">
+            <h2>What should I do if I see an injured stray animal?</h2>
+            <p>YOU are their best chance of survival. Calling PAWS does not guarantee that the animal will be rescued due to limited space at the shelter and not enough volunteers. However, our vet can assist in emergency cases if you are willing to transport and foster the animal.</p>
+        </div>
+        <div class="faq-item">
+            <h2>Can you treat a homeless victim of hit-and-run?</h2>
+            <p>Calling PAWS does not guarantee that the animal will be rescued due to limited space at the shelter and not enough volunteers. Hit-and-run victims need immediate care, and waiting for someone else to respond may cost the animal’s life. Our vet can assist if you are willing to transport and foster the animal.</p>
+        </div>
+        <div class="faq-item">
+            <h2>How do I donate to PAWS?</h2>
+            <p>We accept cash donations via bank transfer, Gcash, and Paypal. Donations in kind are also accepted and can be delivered to the shelter or ordered from our partner shops.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+      
+          <div class="footer-icon">
+              <img src="logo.png" alt="Icon">
+            </div>
+          <div class="footer-container">
+            
+            <div class="footer-content">
+              <div class="footer-column">
+                <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>USD Account No.: 8794 0213 17</p>
+                <br>
+                <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>USD Account No.: 1072 7000 0005</p>
+                <br>
+                <p><strong>BDO Savings</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>Account No.: 00797 0469 900</p>
+              </div>
+      
+              <div class="footer-column">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Our Animals</a>
+                <a href="#">Get Involved</a>
+                <a href="#">FAQs</a>
+                <a href="#">Shop</a>
+                <a href="#">Contact</a>
+              </div>
+      
+              <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          Copyright © 2022. All Rights Reserved for Pawt NPO.
+        </div>
+      </footer>
+</body>

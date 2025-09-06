@@ -1,0 +1,486 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Stand</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f1f9f1;
+      }
+  
+      header {
+        background: rgb(135, 134, 134);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 50px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      header img.logo {
+      height: 50px;
+    }
+  
+      nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+  
+      .donate-btn {
+        background: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .main-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+    }
+
+    .main-text h1{
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .main-text p{
+        font-size:16px;   
+    }
+
+    .main-images {
+      display: flex;
+      gap: 20px;
+    }
+    .main-images img {
+      width: 150px;
+      border: 5px solid #ccc;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+    }
+
+    .section-right {
+      flex-direction: row-reverse; /* Reverse the layout for right alignment */
+    }
+
+    .align-left {
+      text-align: left; /* Align text to the left */
+    }
+
+    .align-right {
+      text-align: right; /* Align text to the right */
+    }
+
+    .section img {
+      width: 500px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-right: 100px;
+    }
+
+    .section .text {
+      width: 50%;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .section h2::before {
+  content: '';
+  display: block;
+  width: 20%; /* Half underline */
+  height: 2px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Align underline to the left if text is left-aligned */
+.align-left h2::before {
+  left: 0;
+}
+
+/* Align underline to the right if text is right-aligned */
+.align-right h2::before {
+  right: 0;
+}
+
+
+    .section p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .view-more {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+
+
+    </style>
+</head>
+<body>
+  <header>
+      <img src="images/logo.png" alt="Logo" class="logo">
+      <nav>
+        <a href="#">About Us</a>
+        <a href="#">Our Animals</a>
+        <a href="#">Get Involved</a>
+        <a href="#">Support Us</a>
+        <a href="#">FAQs</a>
+        <a href="#">Shop</a>
+        <a href="#">Contact</a>
+      </nav>
+      <button class="donate-btn">Donate</button>
+    </header>
+
+  <div class="main-section">
+      <div class="main-images">
+      <img src="placeholder lang sa" alt="placeholder lang sa">
+      </div>
+      <div class="main-text">
+          <h1>PAWS takes a firm stand on matters relating to animal welfare.</h1>
+          <p>and continues to lobby for better laws to ensure humane treatment of 
+              all animals.<br>To know more about our position on some of the most 
+              debated animal welfare issues, read on below.</p>
+          </div>
+      </div>
+
+      <div class="section">
+          <div class="text align-left">
+            <h2>ANIMAL EXPERIMENTATION</h2>
+            <p>PAWS is opposed to the use of animals in experimentation,
+              and is against the use of products and establishments using
+              animals for experimentation.</p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/1.png" alt="Animal Experimentation">
+        </div>
+
+        <div class="section section-right">
+          <div class="text align-right">
+            <h2>ANIMAL FIGHTING</h2>
+            <p>PAWS opposes any acts whereby humans incite, allow, or
+              cause animals to fight. Dogfighting, cockfighting, and
+              bullfighting are examples of animal "blood-sports," which
+              glorify violence for the sake of monetary gain,
+              entertainment, or other purposes.</p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/2.png" alt="Animal Fighting">
+        </div>
+
+        <div class="section">
+          <div class="text align-left">
+            <h2>COMPANION ANIMALS</h2>
+            <p>PAWS approves the keeping of companion animals or pets only when there 
+              is full personal commitment to the welfare of the animals. </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/3.png" alt="Animal Experimentation">
+        </div>
+
+        <div class="section section-right">
+          <div class="text align-right">
+            <h2>EUTHANASIA</h2>
+            <p>PAWS believes that euthanasia is sometimes unavoidable and is, 
+              under certain circumstances, 
+              an important service that is offered to animals.</p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/4.png" alt="Animal Fighting">
+        </div>
+
+        <div class="section">
+          <div class="text align-left">
+            <h2>FARM ANIMALS</h2>
+            <p>Farm animals must be provided with shelter, exercise, food,
+               water and care in a manner appropriate to their physiological and
+                behavioral needs.
+             </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/5.png" alt="Animal Experimentation">
+        </div>
+
+        
+        <div class="section section-right">
+          <div class="text align-right">
+            <h2>FERAL OR STRAY CATS</h2>
+            <p>PAWS is committed to minimizing the number of feral or stray cats
+               by educating the public about spaying and neutering their own cats 
+               and keeping them indoors, and most especially through trap, neuter and
+                return (TNR) programs.
+            </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/6.png" alt="Animal Fighting">
+        </div>
+
+        <div class="section">
+          <div class="text align-left">
+            <h2>GREYHOUND RACING</h2>
+            <p>PAWS opposes greyhound racing and is working against the 
+              entry of greyhound racing into the country. It is inherently
+               cruel and will worsen the pet overpopulation problem that the
+                Philippines already faces.
+
+             </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/7.png" alt="Animal Experimentation">
+        </div>
+
+        <div class="section section-right">
+          <div class="text align-right">
+            <h2>MARINE ANIMALS</h2>
+            <p>We are opposed to the exploitation of all marine animals for commercial, 
+              entertainment and sporting purposes.
+            </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/8.png" alt="Animal Fighting">
+        </div>
+
+        <div class="section">
+          <div class="text align-left">
+            <h2>PUPPY MILLS</h2>
+            <p>PAWS opposes “puppy mills,” facilities and individuals who mass-produce 
+              puppies for the pet shop industry, online selling, or other retail purposes.
+             </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/9.png" alt="Animal Experimentation">
+        </div>
+
+        <div class="section section-right">
+          <div class="text align-right">
+            <h2>RETAIL SALE FOR PETS</h2>
+            <p>PAWS advocates Adopt, Don’t Shop. We strongly discourage people from buying cats 
+              and dogs from pet shops and breeders. We encourage them to adopt from the shelter instead.
+            </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/10.png" alt="Animal Fighting">
+        </div>
+
+        <div class="section">
+          <div class="text align-left">
+            <h2>STRAY FEEDING            </h2>
+            <p>PAWS believes in RESPONSIBLE feeding of stray animals to avoid becoming part of the problem.
+               Although feeding stray animals is an act of kindness, doing it incorrectly can put them at risk instead of help. 
+             </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/11.png" alt="Animal Experimentation">
+        </div>
+
+        <div class="section section-right">
+          <div class="text align-right">
+            <h2>WORKING ANIMALS</h2>
+            <p>PAWS believes that working animals must be treated with consideration and must be given adequate care, 
+              shelter, food and water. They must not be overworked or overloaded, nor must they be forced to work through
+               ill-treatment.
+            </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/12.png" alt="Animal Fighting">
+        </div>
+
+        <div class="section">
+          <div class="text align-left">
+            <h2>ZOOS</h2>
+            <p>PAWS supports the phase-out of zoos. PAWS believes that more effort should go into the preservation of these animals’ 
+              habitat and creating sanctuaries where the animals can thrive in natural environments.
+             </p>
+            <button class="view-more">View More</button>
+          </div>
+          <img src="images/aboutus/13.png" alt="Animal Experimentation">
+        </div>
+
+
+        <footer>
+          <div class="footer">
+        
+            <div class="footer-icon">
+                <img src="images/logo.png" alt="Icon">
+              </div>
+            <div class="footer-container">
+              
+              <div class="footer-content">
+                <div class="footer-column">
+                  <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+                  <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                  <p>USD Account No.: 8794 0213 17</p>
+                  <br>
+                  <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+                  <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                  <p>USD Account No.: 1072 7000 0005</p>
+                  <br>
+                  <p><strong>BDO Savings</strong></p>
+                  <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                  <p>Account No.: 00797 0469 900</p>
+                </div>
+        
+                <div class="footer-column">
+                  <h4>Quick Links</h4>
+                  <a href="#">About Us</a>
+                  <a href="#">Our Animals</a>
+                  <a href="#">Get Involved</a>
+                  <a href="#">FAQs</a>
+                  <a href="#">Shop</a>
+                  <a href="#">Contact</a>
+                </div>
+        
+                <div class="footer-column">
+                  <h4>Connect With Us</h4>
+                  <a href="#">Facebook</a>
+                  <a href="#">Twitter</a>
+                  <a href="#">Instagram</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="footer-bottom">
+            Copyright © 2022. All Rights Reserved for Pawt NPO.
+          </div>
+        </footer>
+
+      
+      </body>
+      
+      </html>
+      
+
+
+      

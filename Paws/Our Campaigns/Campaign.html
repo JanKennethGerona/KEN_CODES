@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Campaigns</title>
+  <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      opacity: 0;
+      transform: translateY(100px);
+      animation: slideFadeIn 0.6s ease forwards;
+    }
+
+    header {
+      background-color: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header img.logo {
+      height: 50px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    @keyframes slideFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    .campaigns-section {
+      background: linear-gradient(to bottom, #d7f0cd, #4dbb50);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .campaigns-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .campaigns-section p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .slider-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      background-color: #2d9c2d;
+    }
+
+    .slider-container img {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 250px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+
+  </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+          <a href="../About us/Aboutus.html">About Us</a>
+          <a href="#">Our Animals</a>
+          <a href="#">Get Involved</a>
+          <a href="#">Support Us</a>
+          <a href="#">FAQs</a>
+          <a href="#">Shop</a>
+          <a href="#">Contact</a>
+        </nav>
+        <button class="donate-button">Donate</button>
+      </header>
+
+      
+
+  <section class="campaigns-section">
+    <h2>OUR CAMPAIGNS</h2>
+    <p>In an effort to educate the Filipino people on responsible pet ownership, PAWS engages the advertising media with the help of its passionate supporters. Our campaigns have resulted in meaningful and lasting changes to animal welfare, paving the way for a brighter future for animals.</p>
+    
+    <div class="slider-container">
+    <img src="images/a1.png" alt="Campaign 1">
+    <img src="images/a2.png" alt="Campaign 2">
+    <img src = "images/a4.png" alt="Campaign 4">
+    <img src="images/a5.png" alt="Campaign 5">
+    <img src="images/a6.png" alt="Campaign 6">
+    <img src="images/a7.png" alt="Campaign 7">
+    <img src="images/a8.png" alt="Campaign 8">
+    <img src="images/a9.png" alt="Campaign 9">
+    <img src="images/a10.png" alt="Campaign 10">
+    <img src="images/a11.png" alt="Campaign 11">
+    <img src="images/a12.png" alt="Campaign 12">
+    <img src="images/a13.png" alt="Campaign 13">
+      
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer">
+  
+      <div class="footer-icon">
+          <img src="logo.png" alt="Icon">
+        </div>
+      <div class="footer-container">
+        
+        <div class="footer-content">
+          <div class="footer-column">
+            <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 8794 0213 17</p>
+            <br>
+            <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 1072 7000 0005</p>
+            <br>
+            <p><strong>BDO Savings</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>Account No.: 00797 0469 900</p>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="#">About Us</a>
+            <a href="#">Our Animals</a>
+            <a href="#">Get Involved</a>
+            <a href="#">FAQs</a>
+            <a href="#">Shop</a>
+            <a href="#">Contact</a>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Connect With Us</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      Copyright © 2022. All Rights Reserved for Pawt NPO.
+    </div>
+  </footer>
+
+</body>
+</html>

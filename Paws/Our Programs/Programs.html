@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/x-icon" src="v278_4822.png"/>
+  <title>Our Programs</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    header {
+      background-color: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      z-index: -1;
+      position: relative;
+      margin-bottom: 33%;
+    }
+
+    header img.logo {
+      height: 50px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .donate-button {
+      background-color: #28a745;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, #c1e6c8, #ffffff);
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .program-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0; /* Remove gap between program items */
+      padding: 0; /* Remove padding around the section */
+      background: #fff;
+    }
+
+    .program {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      margin: 0; /* Remove vertical space between program sections */
+      padding: 0; /* Remove padding */
+    }
+
+    .program:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .program img {
+      width: 100%;
+      max-width: 50%;
+      object-fit: cover;
+      margin: 0; /* Remove any default margin */
+      padding: 0; /* Remove any default padding */
+      display: block; /* Ensure no extra space below the image */
+    }
+
+    .program-content {
+      padding: 30px;
+      flex: 1;
+    }
+
+    .program-content h2 {
+      font-size: 1.8em;
+      margin-top: 0;
+      color: #222;
+    }
+
+    .program-content p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .view-button {
+      margin-top: 15px;
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
+    p.description {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .program-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .program-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .card-title {
+      font-weight: bold;
+      margin: 10px 0 5px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .read-more {
+  display: block;
+  color: green;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #f2f2f2;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 0 auto 10px auto;
+  width: fit-content;
+}
+
+.photo{
+  padding: 0;
+  width: 100%;
+  height:fit-content;
+  position: absolute;
+            top: 0;
+            left: 0;
+  z-index: -2;
+}
+
+.photo img {
+   width: 100%;
+}
+
+
+    .read-more:hover {
+      background-color: #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      .program {
+        flex-direction: column !important;
+      }
+
+      .program img {
+        max-width: 100%;
+      }
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="v278_4822.png" alt="Logo" class="logo">
+    <nav>
+      <a href="#">About Us</a>
+      <a href="#">Our Animals</a>
+      <a href="#">Get Involved</a>
+      <a href="#">Support Us</a>
+      <a href="#">FAQs</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+    </nav>
+    <button class="donate-button">Donate</button>
+  </header>
+
+  <div class = "photo">
+    <img src="images/v252_2161.png" alt="photo"> </div>
+  <div class="hero">
+    <h1>OUR PROGRAMS</h1>
+  </div>
+
+  <div class="program-section">
+
+    <div class="program">
+      <div class="program-content">
+        <h2>KabaliCAT (TNVR)</h2>
+        <p>The PAWS Animal Rehabilitation Center (PARC) houses a veterinary clinic for low-cost spay and neuter surgeries. It’s open to the public, and most especially indigent pet owners.</p>
+        <a href="#" class="view-button">VIEW MORE</a>
+      </div>
+      <img src="images/v252_894.png" alt="Vet surgery">
+    </div>
+
+    <div class="program">
+      <div class="program-content">
+        <h2>KabaliCAT (TNVR)</h2>
+        <p>TNVR is the most effective and permanent way of controlling the stray cat population in your community. You can be part of the solution by working with your local government and PAWS to organize a TNVR in your community.</p>
+        <a href="#" class="view-button">VIEW MORE</a>
+      </div>
+      <img src="images/Screenshot 2025-04-23 174238.png" alt="Stray cats">
+    </div>
+
+    <div class="program">
+      <div class="program-content">
+        <h2>Fetch and Fix</h2>
+        <p>The PAWS Animal Rehabilitation Center (PARC) houses a veterinary clinic for low-cost spay and neuter surgeries. It’s open to the public, and most especially indigent pet owners.</p>
+        <a href="#" class="view-button">VIEW MORE</a>
+      </div>
+      <img src="images/v252_1213.png" alt="Fetch and Fix Clinic">
+    </div>
+
+    <div class="program">
+      <div class="program-content">
+        <h2>Kapon Outreach</h2>
+        <p>Kapon outreach activities are organized with the help and cooperation of your LGU as well as sponsors who are willing to cover the cost of drugs and medical supplies as well as 
+          transportation, food and lodging of our vets and volunteers (if applicable). </p>
+        <a href="#" class="view-button">VIEW MORE</a>
+      </div>
+      <img src="images/v252_1215.png" alt="Stray cats">
+    </div>
+
+    <div class="program">
+      <div class="program-content">
+        <h2>Kapon for All Pets</h2>
+        <p>The PAWS Animal Rehabilitation Center (PARC) houses a veterinary clinic for low-cost spay and neuter surgeries. It is open to the public, and most especially indigent pet owners.</p>
+        <a href="#" class="view-button">VIEW MORE</a>
+      </div>
+      <img src="images/Screenshot 2025-04-23 174312.png" alt="Fetch and Fix Clinic">
+    </div>
+  </div>
+
+  <h2 class = "prog">OUR OTHER PROGRAMS</h2>
+  <p class="description">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar finibus ligula quis suscipit.
+    Praesent ullamcorper, tortor vitae sagittis facilisis, enim sapien tincidunt risus, vitae convallis est neque id neque.
+    Maecenas congue dapibus tellus sed molestie. In et euismod augue
+  </p>
+
+  <div class="programs-grid" style="padding-bottom: 7%;">
+    <!-- Replace image URLs with your actual image paths -->
+    <div class="program-card">
+      <img src="images/v247_509.png" alt="Disaster Relief">
+      <div class="card-content">
+        <div class="card-title">Disaster Relief</div>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <img src="images/v247_516.png" alt="Dr. Dog">
+      <div class="card-content">
+        <div class="card-title">Dr. Dog</div>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <img src="images/v252_1264.png" alt="Humane Education">
+      <div class="card-content">
+        <div class="card-title">Humane Education</div>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <img src="images/v252_1274.png" alt="Lobbying">
+      <div class="card-content">
+        <div class="card-title">Lobbying</div>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <img src="images/v252_1284.png" alt="Prosecution">
+      <div class="card-content">
+        <div class="card-title">Prosecution</div>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <img src="images/v252_1294.png" alt="Rescue Rehab & Adoption">
+      <div class="card-content">
+        <div class="card-title">Rescue Rehab & Adoption</div>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div class="footer">
+
+    <div class="footer-icon">
+        <img src="logo.png" alt="Icon">
+      </div>
+    <div class="footer-container">
+      
+      <div class="footer-content">
+        <div class="footer-column">
+          <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+          <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+          <p>USD Account No.: 8794 0213 17</p>
+          <br>
+          <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+          <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+          <p>USD Account No.: 1072 7000 0005</p>
+          <br>
+          <p><strong>BDO Savings</strong></p>
+          <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+          <p>Account No.: 00797 0469 900</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <a href="#">About Us</a>
+          <a href="#">Our Animals</a>
+          <a href="#">Get Involved</a>
+          <a href="#">FAQs</a>
+          <a href="#">Shop</a>
+          <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Connect With Us</h4>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    Copyright © 2022. All Rights Reserved for Pawt NPO.
+  </div>
+</footer>
+
+
+
+
+
+</body>
+</html>

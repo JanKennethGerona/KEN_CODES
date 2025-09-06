@@ -1,0 +1,10 @@
+Grade Report
+Name: Andi Brand
+Subject			Pre	 Mid	 PrF	  Fin	  LGr	  QPI
+Math        		  85	  80	  83	82.67	  C+	 2.5
+Science     		 100	  75	  80	85.00	   B	 3.0
+Programming 		  92	  95	  91	92.67	   A	 4.0
+Rizal       		  75	  72	  73	73.33	   D	 1.0
+Database    		  92	  88	  89	89.67	  B+	 3.5
+-----------------------------------------------------------------------
+Final QPI: 3.00

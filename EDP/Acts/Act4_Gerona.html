@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+    <script>
+
+        const today = new Date();
+        let name = prompt("Please enter your name");
+        let year = parseInt(prompt("Year you were born"));
+        let month = parseInt(prompt("Month (1-12)"));
+        let day = parseInt(prompt("Day 1-31"));
+        let zodiac = "";
+
+        let age = today.getFullYear() - year;
+        if (today.getMonth() - month < 0 || (today.getMonth() - month === 0 && today.getDate() - day < 0)) {
+            age--;
+        }
+
+
+        if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+            zodiac = "Aquarius";
+        } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+            zodiac = "Pisces";
+        } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+            zodiac = "Aries";
+        } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+            zodiac = "Taurus";
+        } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+            zodiac = "Gemini";
+        } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+            zodiac = "Cancer";
+        } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+            zodiac = "Leo";
+        } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+            zodiac = "Virgo";
+        } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+            zodiac = "Libra";
+        } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+            zodiac = "Scorpio";
+        } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+            zodiac = "Sagittarius";
+        } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+            zodiac = "Capricorn";
+        }
+
+        if (age < 0) {
+            zodiac = "Moron";
+        }
+
+        if (zodiac.charAt(0) === 'A' || zodiac.charAt(0) === 'E' || zodiac.charAt(0) === 'I' || zodiac.charAt(0) === 'O' || zodiac.charAt(0) === 'U') {
+            alert(`Hello ${name}! Today you are ${age} years old and an ${zodiac}.`);
+        } else {
+            alert(`Hello ${name}! Today you are ${age} years old and a ${zodiac}.`);
+        }
+    </script>
+</body>
+</html>

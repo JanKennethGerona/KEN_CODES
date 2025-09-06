@@ -1,0 +1,122 @@
+h3{
+    font-family: courier;
+    color: rgb(255, 255, 255);
+    font-weight: 999;
+}
+
+h1{
+  font-family: courier;
+  color: rgb(255, 255, 255);
+  font-weight: 999;
+}
+
+body{
+    background-image: url(https://coolbackgrounds.io/images/backgrounds/white/white-triangle-369b8d2d.jpg);
+    background-size: cover;
+
+}
+  
+  
+th {
+    background-color: rgb(75, 1, 196); 
+    color: white; 
+}
+
+.container .objectives .left mark{
+    background-color: rgb(133, 133, 133);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.container .objectives .right mark{
+  background-color: rgb(100, 100, 100);
+  border-radius: 5px;
+  padding: 3px;
+}
+  
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: white; 
+}
+
+.container{
+        max-width: fit-content;
+        padding: 1%;
+        width: 50%;
+        max-height: 2000px;
+        margin: 0 auto; 
+        margin-top: 5%;
+        margin-bottom: 5%;
+        background-color: #1d1d1d; 
+        border-radius: 50px;
+        box-shadow: 1px 10px 100px rgba(0, 0, 0, 1);
+        display: block;
+        background-image: url(https://img.lovepik.com/background/20211022/large/lovepik-black-texture-background-image_500861599.jpg);
+}
+
+.intro .text{
+       margin-left: 50px;
+       overflow-wrap: anywhere;
+       overflow: hidden;
+       text-overflow:ellipsis;
+}
+
+.container .intro{
+        padding: auto;
+        font-size: 30px;
+        display:flex;
+        align-items: center;
+        padding-bottom: 30px;
+        transition: 1s;
+}
+
+.container .intro:hover{
+        transform: scale(1.1);
+}
+
+
+.container .objectives{
+        display: flex;
+}
+
+
+.container .objectives .left{
+        width: 30%;
+        position:relative;
+        background-color: rgb(170, 170, 170);
+        padding:10px;
+        overflow-wrap: anywhere;
+        border-bottom-left-radius: 50px;
+        border-top-left-radius: 50px;
+        transition: 1s;
+        text-wrap:inherit;
+}
+
+
+
+.container .objectives .left:hover{
+  transform: scale(1.1);
+}
+
+.container .objectives .right{
+  padding: 10px;
+  top: -502; left: 240;
+  background-color: #424242;
+  width: 70%;
+  overflow-wrap: anywhere;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transition: 1s;
+}
+
+.container .objectives .right:hover{
+  transform: scale(1.1);
+}
+.container .objectives .left li{
+  padding: 9px;
+}
+
+img {
+  border-radius: 50%;
+}

@@ -1,0 +1,342 @@
+<head>
+    <title>Kapon</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        background-color: #BCBCBC;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header img.logo {
+        height: 50px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .donate-button {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .hero {
+        background: #e7e6e6cc;
+        text-align: left;
+        padding: 80px 20px 40px;
+        height: 500px;
+        height: fit-content;
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 40;
+        font-weight: bold;
+        color: #222;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        float: left;
+        margin-left: 8%;
+        padding-bottom: 60px;
+    }
+
+    .hero-image {
+        float: right;
+        margin-left: 10%;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        height: 500px;
+        border-radius: 10px;
+    }
+
+    .program-section {
+        display: flex;
+        gap: 0; /* Remove gap between program items */
+        padding: 0; /* Remove padding around the section */
+        background-color: #F6FFF3;
+    }
+
+    #content-left {
+        display: flex;
+        flex-direction: column;
+        background:none;
+        padding-left: 10%;
+        padding-top: 5%;
+        max-width: 30%;
+        zoom: 1.2;
+        height: 100%;
+    }
+
+    #content-left p{
+        color: #3a3a3a;
+    }
+
+    #content-right {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        padding-left: 15%;
+        max-width: 40%;
+        padding-top: 50px;
+        zoom: 1.2;
+        height: 100%;
+    }
+
+    #content-right img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+
+</style>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo" />
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Aboutus.html">About Us</a>
+            <a href="Programs.html">Our Programs</a>
+            <a href="FAQs.html">FAQs</a>
+            <a href="Contactus.html">Contact Us</a>
+        </nav>
+        <button class="donate-button">Donate Now</button>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>KAPON</h1>
+            <p>Spay (verb) : to remove the ovaries of a female animal <br> Neuter (verb) : to remove the testicles of a male animal</p>
+            <ul>
+                <li>Reduce chances of breast cancer and pyometra for females</li>
+                <li>Prevent testicular cancer for males</li>
+                <li>No more heat cycles and behavioral changes</li>
+                <li>Reduce tendency to roam outdoors and be exposed to harm</li>
+                <li>Reduce or eliminated habit of spraying and marking</li>
+                <li>Reduce chances of dog fights and cat fights among males</li>
+                <li>Reduce number of unwanted pets and homeless animals</li>
+            </ul>
+            <button class="donate-button" style="max-width: max-content;">BOOK</button>
+        </div>
+        <div class="hero-image">
+            <img src="pic1.png" alt="Hero Image" />
+        </div>
+    </div>
+
+    <div class="program-section" style="padding-bottom: 7%;">
+        <div id="content-left">
+            <h1><br><br><br><small>HOW TO BOOK YOUR PET: </small></h1>
+            <br>
+            <p>1. <b>First, ensure that your cat or dog is at least 6 months old.</b> There is no maximum age but your pet must be healthy.
+                Notes: If your pet had undergone cesarean section or any major surgery in relation to their reproductive organ, please book at another vet clinic as we are not equipped to do the surgery as these cases also need confinement which is not available at the PAWS clinic.
+                If your pets are recently vaccinated or planning to be vaccinated, we recommend scheduling their spay/neuter surgery either two weeks before or two weeks after their vaccination appointment. Our veterinarian advises against performing these procedures too close together, as this can cause undue stress to your pet. <br>  
+                
+                <br>2. <b>Get a blood test:</b> Blood testing (CBC, SGPT, CREA) is required for mixed/purebred pets or pets older than 4 years, but still strongly recommended for younger or healthy looking pets at least 2-7 days before the kapon appointment .
+                *A Blood test package for CBC, SGPT & CREA is available at the PAWS clinic for only P1,250 (inclusive of check-up).  PAWS can only accommodate blood testing at 8:30 am on Monday and Thursday for confirmed clients with reservation of P250. 
+                The blood test at PAWS clinic may be scheduled by our staff prior to the kapon schedule as results cannot be released on the same day. Please also be informed that we do not recommend pursuing blood tests for in-heat female dogs. <br>
+                
+                <br>3. <b>Take photos:</b> You will be asked to submit photos of your pet’s head, body top view, body side view, and genitals.
+                Note: Photos of brachycephalic breed (short-nose dogs), small breeds and overweight breeds are needed to be evaluated first by our veterinarian before getting their blood test as some of them cannot be accommodated at the PAWS clinic as they may need to be confined which is not available at PAWS. <br>
+                <br>4. <b>Pay online:</b> You will be asked to complete your payment  at least 3 days prior to your chosen appointment before a PAWS staff confirm your kapon appointment. You will only be charged the base rate. Additional fees, if any, will be computed on the day of surgery.
+                Ready with the above requirements?</p><br><br><br>
+
+                <button class="donate-button" style="max-width: max-content; margin-top: 40px;">BOOK</button>
+        </div>
+
+        <div id="content-right">
+            <img src="doggy.png" alt="dog">
+            <h1><br><small>HOW TO BOOK YOUR PET: </small></h1>
+            <p>Native Female cat – P1,000 <br>Native Male cat – P700 <br><br>
+
+                Native Female dog up to 15kg – P1,500 <br>Native Female dog between 16-20kg – P2,000 <br>Native Female dog between 21-24kg – P2,500 <br>Native Female dog between 25-35kg – P5,000 <br>Native Male dog up to 15kg – P1,000 <br>Native Male dog between 16-20kg– P1,500
+                
+                <br><br>Additional fees (to be determined on the day of surgery)
+                + P500 for mixed and purebred cats <br>+ P1,000 for mixed and purebred dogs <br>+ P500 for pregnant cats <br>+ P1000 for pregnant dogs <br>+ P300-P500 for male cats with undescended testicle/s <br>+ P500-P1000 for male dogs with undescended testicle/s <br>+ P500 for female cats with pyometra <br>+ P1,000 for female dogs with pyometra <br>+ P500 for every 5 kg in excess of 35kg body weight (Females) <br>+ P500 for every 5 kg in excess of 20kg body weight (Males)
+                
+                <br><br>If your pet is determined to be in a delicate or special <br>
+                condition on the day of surgery, the vet may recommend: <br>
+                + P2,000 – P3,000 for use of gas anesthesia</p>
+
+        </div>
+
+        
+    </div>
+
+    <footer>
+        <div class="footer">
+      
+          <div class="footer-icon">
+              <img src="logo.png" alt="Icon">
+            </div>
+          <div class="footer-container">
+            
+            <div class="footer-content">
+              <div class="footer-column">
+                <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>USD Account No.: 8794 0213 17</p>
+                <br>
+                <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>USD Account No.: 1072 7000 0005</p>
+                <br>
+                <p><strong>BDO Savings</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>Account No.: 00797 0469 900</p>
+              </div>
+      
+              <div class="footer-column">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Our Animals</a>
+                <a href="#">Get Involved</a>
+                <a href="#">FAQs</a>
+                <a href="#">Shop</a>
+                <a href="#">Contact</a>
+              </div>
+      
+              <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          Copyright © 2022. All Rights Reserved for Pawt NPO.
+        </div>
+      </footer>
+        
+      </body>
